@@ -5,7 +5,7 @@ try:
     from pip._internal.network.session import PipSession
     from pip._internal.req import parse_requirements
     install_requires = parse_requirements('requirements.txt', session=PipSession())
-    dependencies = [str(package.requirement) for package in install_requires]
+    dependencies = [str(package.req) for package in install_requires]
 except ImportError:
     try:
         # 10.0.0 <= pip <= 19.3.1
